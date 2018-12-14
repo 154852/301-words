@@ -22,7 +22,6 @@
                 grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
                 grid-column-gap: 1em;
                 margin: 0 1em;
-                height: 100%;
 
                 overflow: scroll;
             }
@@ -58,8 +57,8 @@
         </style>
     </head>
     <body class="page-open">
-        <div style="position: absolute; background-color: transparent; top: 0" class="inner-body bg"></div>
         <div class="inner-body">
+            <div class="bg"></div>
             <h1 style="text-align: center; font-size: 300%; margin: 0; padding: 0.5em 0">The <b>Contents</b></h1>
             <div class="table">
             </div>
@@ -74,7 +73,7 @@
 
                 const p = document.createElement('p');
                 const title = document.createElement('b');
-                title.innerText = story.title;
+                title.innerText = story.title.replace(/\*/g, '');
                 p.appendChild(title);
                 p.appendChild(document.createTextNode(' by '));
 

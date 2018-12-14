@@ -30,12 +30,23 @@
                 padding-top: 0.5em;
                 margin-bottom: 0.5em;
             }
+
+            .margined {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            @media only screen and (max-width: 600px) {
+                .margined {
+                    width: 95%;
+                }
+            }
         </style>
     </head>
     <body class="page-open">
-        <div style="position: absolute; background-color: transparent; top: 0" class="inner-body bg"></div>
         <div class="inner-body">
-            <div class="fade-in" style="width: 90%; margin: 0 auto;">
+            <div class="bg"></div>
+            <div class="fade-in margined">
                 <h1 class="title"></h1>
                 <p class="main"></p>
                 <p style="text-align: right; font-weight: 200; padding-bottom: 1em">by <b class="author"></b></p>
@@ -46,15 +57,7 @@
         getData(function(data) {
             const book = data[parseInt(window.location.search.split('b=')[1])];
 
-            let text = escapeHTML(book.title);
-
-            const len = text.length;
-            let offset = 0;
-            for (let i = 0; i < len; i += 3) { 
-                text = text.slice(0, i + offset) + '<b>' + text.slice(i + offset, i + 2 + offset) + '</b>' + text.slice(i + 2 + offset);
-                i += parseInt(Math.random() * 2);
-                offset += 7;
-            }
+            let text = escapeHTML(book.title).replace(/\*([^*]+)\*/g, '<b>$1</b>');
 
             document.querySelector('.title').innerHTML = text;
             document.querySelector('.main').innerText = book.content;

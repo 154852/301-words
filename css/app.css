@@ -1,20 +1,35 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    display: inline-block;
 }
 
 .inner-body {
-    width: 98vw;
-    min-height: 96vh;
-    margin: 2vh 1vw;
+    width: calc(100% - 2em);
+    min-height: calc(100% - 2em);
+    margin: 1em 1em;
 
     background-color: rgba(52, 73, 94, 0.4);
 
     position: relative;
+
+    overflow: auto;
+}
+
+@media only screen and (max-width: 500px) {
+    .inner-body {
+        width: calc(100% - 1.6em);
+        min-height: calc(100% - 1.6em);
+
+        margin: 0.8em 0.8em;
+    }
+
+    body {
+        font-size: 80%;
+    }
 }
 
 b {
     color: rgb(52, 73, 94);
-    /* font-weight: 500; */
 }
 
 h1 {
