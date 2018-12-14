@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>300 Words</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="css/app.css" />
+        <link rel="stylesheet" href="css/utils.css" />
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:500,200" rel="stylesheet" />
+
+        <link rel="stylesheet" href="css/extra/bg.css" />
+        <script src="js/extra/bg.js"></script>
+
+        <script src="js/utils.js"></script>
+
+        <style>
+            .main {
+                white-space: pre-wrap;                
+                max-width: 100%;
+                color: white;
+            }
+
+            .title {
+                margin-top: 0;
+                font-size: 300%;
+                text-align: center;
+                padding-top: 0.5em;
+                margin-bottom: 0.5em;
+            }
+        </style>
+    </head>
+    <body class="page-open">
+        <div style="position: absolute; background-color: transparent; top: 0" class="inner-body bg"></div>
+        <div class="inner-body">
+            <div class="fade-in" style="width: 90%; margin: 0 auto;">
+                <h1 class="title"></h1>
+                <p class="main"></p>
+                <p style="text-align: right; font-weight: 200; padding-bottom: 1em">by <b class="author"></b></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        getData(function(data) {
+            const book = data[parseInt(window.location.search.split('b=')[1])];
+
+            let text = escapeHTML(book.title);
+
+            const len = text.length;
+            let offset = 0;
+            for (let i = 0; i < len; i += 3) { 
+                text = text.slice(0, i + offset) + '<b>' + text.slice(i + offset, i + 2 + offset) + '</b>' + text.slice(i + 2 + offset);
+                i += parseInt(Math.random() * 2);
+                offset += 7;
+            }
+
+            document.querySelector('.title').innerHTML = text;
+            document.querySelector('.main').innerText = book.content;
+            document.querySelector('.author').innerHTML = book.author == ''? '<em>anonymous</em>':escapeHTML(book.author);
+        })
+
+        linedBackground(document.querySelector('.bg'));
+    </script>
+</html>

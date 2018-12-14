@@ -1,6 +1,6 @@
 .bg-line-vert, .bg-line-hori {
     position: absolute;
-    background-color: rgba(52, 73, 94, 0.7);
+    background-color: rgba(52, 73, 94, 0.5);
 
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;

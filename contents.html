@@ -57,7 +57,7 @@
             }
         </style>
     </head>
-    <body>
+    <body class="page-open">
         <div style="position: absolute; background-color: transparent; top: 0" class="inner-body bg"></div>
         <div class="inner-body">
             <h1 style="text-align: center; font-size: 300%; margin: 0; padding: 0.5em 0">The <b>Contents</b></h1>
@@ -76,7 +76,10 @@
                 const title = document.createElement('b');
                 title.innerText = story.title;
                 p.appendChild(title);
-                p.appendChild(document.createTextNode(' by ' + story.author));
+                p.appendChild(document.createTextNode(' by '));
+
+                p.innerHTML += story.author == ''? '<em>anonymous</em>':escapeHTML(story.author);
+                
                 out.appendChild(p);
 
                 const path = 'read.html?b=' + i;
