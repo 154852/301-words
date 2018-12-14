@@ -1,0 +1,23 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.inner-body {
+    width: 98vw;
+    min-height: 96vh;
+    margin: 2vh 1vw;
+
+    background-color: rgba(52, 73, 94, 0.4);
+
+    position: relative;
+}
+
+b {
+    color: rgb(52, 73, 94);
+    font-weight: 500;
+}
+
+h1 {
+    font-weight: 200;
+}

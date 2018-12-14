@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>300 Words</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="css/app.css" />
+        <link rel="stylesheet" href="css/utils.css" />
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:500,300" rel="stylesheet" />
+
+        <link rel="stylesheet" href="css/extra/bg.css" />
+        <script src="js/extra/bg.js"></script>
+
+        <script src="js/utils.js"></script>
+
+        <style>
+            .table {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                grid-column-gap: 1em;
+                margin: 0 1em;
+                height: 100%;
+
+                overflow: scroll;
+            }
+
+            .table > * {
+                display: block;
+                background-color: rgb(52, 73, 94);
+                color: white;
+                padding: 0.5em 1em;
+            }
+
+            @media (hover: hover) {
+                .table > * {
+                    transition: 0.5s;
+                    -webkit-transition: 0.5s;
+                    cursor: pointer;
+                }
+
+                .table > *:hover {
+                    filter: brightness(200%);
+                    -webkit-filter: brightness(200%);
+                }
+            }
+
+            .table {
+                font-weight: 300;
+            }
+
+            .table b {
+                color: inherit;
+                font-weight: 500;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="position: absolute; background-color: transparent; top: 0" class="inner-body bg"></div>
+        <div class="inner-body">
+            <h1 style="text-align: center; font-size: 300%; margin: 0; padding: 0.5em 0">The <b>Contents</b></h1>
+            <div class="table">
+            </div>
+        </div>
+    </body>
+    <script>
+        getData(function(data) {
+            const out = document.querySelector('.table');
+
+            for (let i = 0; i < data.length; i++) {
+                const story = data[i];
+
+                const p = document.createElement('p');
+                const title = document.createElement('b');
+                title.innerText = story.title;
+                p.appendChild(title);
+                p.appendChild(document.createTextNode(' by ' + story.author));
+                out.appendChild(p);
+
+                const path = 'read.html?b=' + i;
+                p.addEventListener('click', function() {
+                    openPage(path, '_self');
+                });
+                p.title = path;
+            }
+
+            linedBackground(document.querySelector('.bg'));
+        })
+    </script>
+</html>
