@@ -137,3 +137,7 @@ html, body {
 ::-webkit-scrollbar { 
     display: none;
 }
+
+.start {
+    animation-play-state: running;
+}
