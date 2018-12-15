@@ -8,6 +8,9 @@ body {
     min-height: calc(100% - 2em);
     margin: 1em 1em;
 
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+
     background-color: rgba(52, 73, 94, 0.4);
 
     position: relative;
