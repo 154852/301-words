@@ -5,7 +5,7 @@ function linedBackground(parent) {
         element.style.left = ((Math.random() * 90) + 5) + '%';
         element.style.top = ((Math.random() * 90) + 5) + '%';
 
-        element.style.setProperty('--size', (parseInt(Math.random() * 2) + 1) + 'px');
+        element.style[i % 2 == 1? 'width':'height'] = (parseInt(Math.random() * 2) + 1) + 'px';
 
         element.style.animationDuration = (parseInt(Math.random() * 1000) + 200) + 'ms';
         element.style.webkitAnimationDuration = element.style.animationDuration;

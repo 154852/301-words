@@ -4,9 +4,13 @@
 
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
 
     animation-timing-function: ease-in;
     -webkit-animation-timing-function: ease-in;
+    -moz-animation-timing-function: ease-in;
+    -o-animation-timing-function: ease-in;
 }
 
 @keyframes bg-vert-load {
@@ -33,19 +37,19 @@
 
 .bg-line-vert {
     width: 100%;
-    height: var(--size);
-
     animation-name: bg-vert-load;
     -webkit-animation-name: bg-vert-load;
+    -moz-animation-name: bg-vert-load;
+    -o-animation-name: bg-vert-load;
 }
 
 .bg-line-hori {
     height: 100%;
 
-    width: var(--size);
-
     animation-name: bg-hori-load;
     -webkit-animation-name: bg-hori-load;
+    -moz-animation-name: bg-hori-load;
+    -o-animation-name: bg-hori-load;
 }
 
 .bg {
