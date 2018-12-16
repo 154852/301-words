@@ -25,3 +25,9 @@ function escapeHTML(unsafe) {
 function isIE() {
     return /MSIE|Trident/.test(window.navigator.userAgent);
 }
+
+if (isIE()) {
+    window.XMLHttpRequest = () => {
+        return new ActiveXObject("Microsoft.XMLHTTP");
+    };
+}
