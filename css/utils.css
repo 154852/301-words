@@ -102,7 +102,7 @@ html, body {
     -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards; */
 
-    animation-name: page-exit;
+    /* animation-name: page-exit;
     -ms-animation-name: page-exit;
     -webkit-animation-name: page-exit;
     -moz-animation-name: page-exit;
@@ -112,7 +112,7 @@ html, body {
     -ms-animation-duration: 0.5s;
     -webkit-animation-duration: 0.5s;
     -moz-animation-duration: 0.5s;
-    -o-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s; */
 }
 
 @keyframes page-open {
