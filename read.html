@@ -57,12 +57,19 @@
     </body>
     <script>
         document.body.classList.add('start');
-        
+
         getData(function(data) {
-            const book = data[parseInt(window.location.search.split('b=')[1])];
+            let book = data[parseInt(window.location.search.split('b=')[1])];
+
+            if (book == null) {
+                book = {
+                    title: '*Error:* Book not found',
+                    content: 'Sorry, we couldn\'t find the book you were looking for.',
+                    author: 'The Server'
+                }
+            }
 
             let text = escapeHTML(book.title).replace(/\*([^*]+)\*/g, '<b>$1</b>');
-
             document.querySelector('.title').innerHTML = text;
             document.querySelector('.main').innerText = book.content;
             document.querySelector('.author').innerHTML = book.author == ''? '<em>anonymous</em>':escapeHTML(book.author);
