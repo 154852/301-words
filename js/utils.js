@@ -1,7 +1,7 @@
 function openPage(page, target) {
     document.body.classList.add('page-exit'); document.body.classList.remove('page-open');
 
-    if (page) setTimeout(() => window.open(page, target), 500);
+    if (page) setTimeout(function() { window.open(page, target) }, 500);
 }
 
 function getData(cb) {
@@ -27,7 +27,7 @@ function isIE() {
 }
 
 if (isIE()) {
-    window.XMLHttpRequest = () => {
+    window.XMLHttpRequest = function() {
         return new ActiveXObject("Microsoft.XMLHTTP");
     };
 }
