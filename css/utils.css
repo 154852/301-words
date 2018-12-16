@@ -96,11 +96,11 @@ html, body {
 }
 
 .page-exit {
-    animation-fill-mode: forwards;
+    /* animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
-    -o-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards; */
 
     animation-name: page-exit;
     -ms-animation-name: page-exit;
