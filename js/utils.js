@@ -6,8 +6,8 @@ function openPage(page, target) {
 
 function getData(cb) {
     const xhr = new XMLHttpRequest();
-    xhr.onload = function() {
-        cb(JSON.parse(this.responseText));
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) cb(JSON.parse(xhr.responseText));
     };
     xhr.open('GET', 'app/data.json');
     xhr.send();
