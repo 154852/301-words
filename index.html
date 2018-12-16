@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>300 Words</title>
-        <link rel="shortcut icon" href="favicon.png" type="image/png" />
+        <link rel="shortcut icon" href="res/favicon.png" type="image/png" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -51,6 +51,32 @@
                     font-size: 350% !important;
                 }
             }
+
+            .t::before {
+                position: absolute;
+                width: 0.7em;
+                height: 0.7em;
+
+                background-image: url(res/hat.svg);
+
+                transform: rotate(-8deg);
+                -webkit-transform: rotate(-8deg);
+                -moz-transform: rotate(-8deg);
+                -o-transform: rotate(-8deg);
+                -ms-transform: rotate(-8deg);
+
+                top: -20%;
+                left: -50%;
+                content: '';
+
+                background-position: center;
+                background-size: contain;
+            }
+
+            .t {
+                position: relative;
+                overflow: hidden;
+            }
         </style>
     </head>
     <body class="page-open">
@@ -58,7 +84,11 @@
             <div class="bg"></div>
             <div class="center fade-in">
                 <h1 style="font-size: 500%; margin-bottom: 0"><b>300</b> Words</h1>
-                <p style="margin-top: 0">Immerse yourself in the artwork of <span style="color: white">101/En1</span></p>
+                <p style="margin-top: 0">
+                    Christmas reading with a 
+                    <span class="t">t</span>wist by
+                    <span style="color: white">101/En1</span>
+                </p>
 
                 <p style="color: white" class="continue" onclick="openPage('contents.html', '_self');">
                     Continue
@@ -70,8 +100,6 @@
         </div>
     </body>
     <script>
-        // document.body.classList.remove('page-exit'); document.body.classList.add('page-open');
-        
         linedBackground(document.querySelector('.bg'));
     </script>
 </html>

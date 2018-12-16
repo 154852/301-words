@@ -160,3 +160,8 @@ html, body {
     -moz-animation-play-state: running;
     -o-animation-play-state: running;
 }
+
+.background-image {
+    background-position: center;
+    background-size: contain;
+}
