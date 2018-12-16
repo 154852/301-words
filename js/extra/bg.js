@@ -1,4 +1,6 @@
 function linedBackground(parent) {
+    // if (isIE()) return;
+
     const lines = [];
     let index = 0;
 

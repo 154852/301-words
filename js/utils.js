@@ -20,4 +20,8 @@ function escapeHTML(unsafe) {
          .replace(/>/g, "&gt;")
          .replace(/"/g, "&quot;")
          .replace(/'/g, "&#039;");
- }
+}
+
+function isIE() {
+    return /MSIE|Trident/.test(window.navigator.userAgent);
+}
