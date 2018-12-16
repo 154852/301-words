@@ -56,7 +56,7 @@
         </div>
     </body>
     <script>
-        document.body.classList.add('start');
+        document.body.classList.remove('page-exit'); document.body.classList.add('page-open');
 
         getData(function(data) {
             let book = data[parseInt(window.location.search.split('b=')[1])];
