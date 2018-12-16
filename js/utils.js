@@ -1,7 +1,8 @@
 function openPage(page, target) {
-    document.body.classList.add('page-exit'); document.body.classList.remove('page-open');
+    // document.body.classList.add('page-exit'); document.body.classList.remove('page-open');
+    window.open(page, target)
 
-    if (page) setTimeout(function() { window.open(page, target) }, 500);
+    // if (page) setTimeout(function() { window.open(page, target) }, 500);
 }
 
 function getData(cb) {
