@@ -56,8 +56,6 @@
         </div>
     </body>
     <script>
-        // document.body.classList.add('page-open');
-
         getData(function(data) {
             let book = data[parseInt(window.location.search.split('b=')[1])];
 
@@ -71,7 +69,7 @@
 
             let text = escapeHTML(book.title).replace(/\*([^*]+)\*/g, '<b>$1</b>');
             document.querySelector('.title').innerHTML = text;
-            document.querySelector('.main').innerText = book.content;
+            document.querySelector('.main').innerText = book.content.replace(/\t/g, '');
             document.querySelector('.author').innerHTML = book.author == ''? '<em>anonymous</em>':escapeHTML(book.author);
         })
 
